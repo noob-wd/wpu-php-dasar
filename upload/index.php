@@ -1,3 +1,16 @@
+<?php
+if(isset($_FILES)) {
+	$name = $_FILES['berkas']['name'];
+	$tmp = $_FILES['berkas']['tmp_name'];
+	$dir = "files/";
+	$upload = move_uploaded_file($tmp,$dir.$name);
+	if($upload){
+		echo "berhasil";
+	} else{
+		echo "gagal";
+	}
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
